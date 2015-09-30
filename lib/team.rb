@@ -19,8 +19,9 @@ class Team
   end
 
   def male_count
-    players.select{male?}
-    {male:true}
+    players.select do |player|
+      player.male?
+    end.count
   end
 
   attr_reader :players

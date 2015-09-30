@@ -10,12 +10,13 @@ describe 'beachvolleyball' do
   end
 
   it 'the team is ready when it has enough players' do
-    7.times{team.add(player)}
+    3.times{ team.add(male_player)   }
+    5.times{ team.add(female_player) }
     expect(team).to be_ready
   end
 
   it 'the team is not ready when it has too many players' do
-    11.times{team.add(player)}
+    11.times{team.add(male_player)}
     expect(team).not_to be_ready
   end
 
