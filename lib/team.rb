@@ -5,7 +5,7 @@ class Team
   end
 
   def ready?
-    if players.count > 6
+    if players.count > 6 && players.count < 11
       true
     else
       false
