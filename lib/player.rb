@@ -1,1 +1,3 @@
-class Player; end
+class Player
+
+end
