@@ -8,7 +8,7 @@ class Team
     (player_count > 6 && player_count < 11 && male_count > 1)
   end
 
-  def add(player)
+  def add player
     players << player
   end
 

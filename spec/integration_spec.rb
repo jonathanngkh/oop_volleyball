@@ -1,24 +1,27 @@
 describe 'beachvolleyball' do
 
   let(:team)          { Team.new      }
-  let(:player)        { Player.new    }
   let(:male_player)   { Player.male   }
   let(:female_player) { Player.female }
 
-  it 'the team is not ready without players' do
-    expect(team).not_to be_ready
-  end
+  context 'number of players criteria' do
 
-  it 'the team is ready when it has enough players' do
-    add_players_to(team, males: 3, females: 5)
+    it 'the team is not ready without players' do
+      expect(team).not_to be_ready
+    end
 
-    expect(team).to be_ready
-  end
+    it 'the team is ready when it has enough players' do
+      add_players_to(team, males: 3, females: 5)
 
-  it 'the team is not ready when it has too many players' do
-    add_players_to(team, males: 11)
+      expect(team).to be_ready
+    end
 
-    expect(team).not_to be_ready
+    it 'the team is not ready when it has too many players' do
+      add_players_to(team, males: 11)
+
+      expect(team).not_to be_ready
+    end
+
   end
 
   it 'the team is not ready when it has too few men' do
