@@ -19,9 +19,9 @@ describe 'beachvolleyball' do
     expect(team).not_to be_ready
   end
 
-  it 'the team is not ready when it has too few women' do
-    team.add female_player
-    7.times { team.add male_player }
+  it 'the team is not ready when it has too few men' do
+    team.add male_player
+    7.times { team.add female_player }
 
     expect(team).not_to be_ready
   end

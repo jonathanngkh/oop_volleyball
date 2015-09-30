@@ -5,7 +5,7 @@ class Team
   end
 
   def ready?
-    (player_count > 6 && player_count < 11)
+    (player_count > 6 && player_count < 11 && male_count > 1)
   end
 
   def add(player)
@@ -16,6 +16,11 @@ class Team
 
   def player_count
     players.count
+  end
+
+  def male_count
+    players.select{male?}
+    {male:true}
   end
 
   attr_reader :players
