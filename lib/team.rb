@@ -5,11 +5,7 @@ class Team
   end
 
   def ready?
-    if players.count > 6 && players.count < 11
-      true
-    else
-      false
-    end
+    (player_count > 6 && player_count < 11)
   end
 
   def add(player)
@@ -17,5 +13,10 @@ class Team
   end
 
   private
+
+  def player_count
+    players.count
+  end
+
   attr_reader :players
 end
